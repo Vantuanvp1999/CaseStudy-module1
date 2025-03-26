@@ -13,7 +13,7 @@ let  car =  {
     speed : 2,
     direction : ""
     }
-let obtacles = generateObtacles(15);
+let obtacles = generateObtacles(10);
 let rewards= generateRewards(5);
 let score =0 ;
 let gameRunning = true;
