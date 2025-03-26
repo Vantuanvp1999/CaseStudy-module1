@@ -10,8 +10,8 @@ let rewardPic= document.getElementById("rewardPic");
 let  car =  {
     x : 100,
     y : 100,
-    speed : 3,
-    direction : "right"
+    speed : 2,
+    direction : ""
     }
 let obtacles = generateObtacles(15);
 let rewards= generateRewards(5);
@@ -57,8 +57,8 @@ function carMove(){
 
     if(car.x<0) car.x=0;
     if(car.y<0) car.y=0;
-    if(car.x+20>canvas.width)car.x=canvas.width-20;
-    if(car.y+20>canvas.height) car.y=canvas.height-20;
+    if(car.x+40>canvas.width)car.x=canvas.width-40;
+    if(car.y+40>canvas.height) car.y=canvas.height-40;
 
 }
 function checkCollision(){
