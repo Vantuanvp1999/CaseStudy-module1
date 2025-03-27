@@ -80,16 +80,16 @@ function checkCollision(){
 
 function drawGame(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle = "#0000FF";
+
     ctx.drawImage(carPic,car.x,car.y, 40, 40);
 
-    ctx.fillStyle = "#ff0000";
+
     obtacles.forEach(obs => ctx.drawImage(obs.pic,obs.x,obs.y, obs.size, obs.size));
 
-    ctx.fillStyle = "#ffff00";
+
     rewards.forEach(reward => ctx.drawImage(reward.pic,reward.x,reward.y, reward.size, reward.size));
 
-    ctx.fillStyle = "#000000";
+
     ctx.fillText(score,20,40);
 
 }
