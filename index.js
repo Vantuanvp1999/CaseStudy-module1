@@ -81,7 +81,7 @@ function checkCollision(){
 function drawGame(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
-    ctx.drawImage(carPic,car.x,car.y, 40, 40);
+    ctx.drawImage(carPic,car.x,car.y, 50, 40);
 
 
     obtacles.forEach(obs => ctx.drawImage(obs.pic,obs.x,obs.y, obs.size, obs.size));
