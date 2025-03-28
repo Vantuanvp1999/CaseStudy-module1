@@ -89,7 +89,8 @@ function drawGame(){
 
     rewards.forEach(reward => ctx.drawImage(reward.pic,reward.x,reward.y, reward.size, reward.size));
 
-
+    ctx.fillStyle = "#000000";
+    ctx.font = "30px Arial";
     ctx.fillText(score,20,40);
 
 }
