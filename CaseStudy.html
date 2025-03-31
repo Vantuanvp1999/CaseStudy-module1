@@ -10,6 +10,18 @@
      canvas{
          background-color: lightgoldenrodyellow;
      }
+
+      table {
+          width: 50%;
+          border-collapse: collapse;
+          margin-top: 20px;
+      }
+     th, td {
+         border: 1px solid black;
+         padding: 10px;
+         text-align: center;
+     }
+
  </style>
 </head>
 <body>
@@ -17,6 +29,17 @@
 <img src="obstacle2.png" id="obsPic" width="10" height="10">
 <img src="reward2.png" id="rewardPic" width="10" height="10">
 <canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;"></canvas>
+<h2>Bảng Xếp Hạng Người Chơi</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Hạng</th>
+        <th>Tên</th>
+        <th>Điểm</th>
+    </tr>
+    </thead>
+    <tbody id="leaderboard"></tbody>
+</table>
 <script src="index.js"></script>
 </body>
 </html>

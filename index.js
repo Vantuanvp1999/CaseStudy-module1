@@ -3,6 +3,20 @@ let ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 600;
 
+function getPlayerName() {
+    localStorage.removeItem("playerName");
+
+    let name = prompt("Nhập tên của bạn:");
+
+    // Nếu người chơi nhập, lưu vào localStorage
+    if (name) {
+        localStorage.setItem("playerName", name);
+    }
+
+    return name;
+}
+
+
 let carPic= document.getElementById("carPic");
 let obsPic= document.getElementById("obsPic");
 let rewardPic= document.getElementById("rewardPic");
@@ -94,8 +108,39 @@ function drawGame(){
     ctx.fillText(score,20,40);
 
 }
+function addScore(name, score) {
+    let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+    leaderboard.push({ name, score });
+
+    // Sắp xếp điểm từ cao đến thấp
+    leaderboard.sort((a, b) => b.score - a.score);
+
+    // Giới hạn top 10 người chơi
+    leaderboard = leaderboard.slice(0, 10);
+
+    localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+}
+function showLeaderboard() {
+    let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+    let tableBody = document.getElementById("leaderboard");
+    tableBody.innerHTML = ""; // Xóa dữ liệu cũ
+
+    leaderboard.forEach((player, index) => {
+        let row = `<tr>
+                    <td>#${index + 1}</td>
+                    <td>${player.name}</td>
+                    <td>${player.score}</td>
+                </tr>`;
+        tableBody.innerHTML += row;
+    });
+}
+let playerName = getPlayerName();
 function gameRun(){
-    if(!gameRunning) return;
+
+    if(!gameRunning){
+        addScore(playerName, score);
+        showLeaderboard()
+        return};
     carMove()
     checkCollision();
     drawGame();
