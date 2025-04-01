@@ -58,14 +58,14 @@ function handleKeyDown(event){
 addEventListener("keydown",handleKeyDown);
 addEventListener("keyup",(event) =>{if(event.keyCode==17) car.speed=2});
 function carMove(){
-    if(car.direction=="right")car.x+=car.speed
+    if(car.direction=="right")car.x+=car.speed;
     if(car.direction=="left")car.x-=car.speed;
     if(car.direction=="down")car.y+=car.speed;
     if(car.direction=="up")car.y-=car.speed;
 
     if(car.x<0) car.x=0;
     if(car.y<0) car.y=0;
-    if(car.x+40>canvas.width)car.x=canvas.width-40;
+    if(car.x+50>canvas.width)car.x=canvas.width-50;
     if(car.y+40>canvas.height) car.y=canvas.height-40;
 
 }
