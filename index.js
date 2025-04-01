@@ -1,7 +1,7 @@
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
 canvas.width = 800;
-canvas.height = 600;
+canvas.height = 400;
 
 function getPlayerName() {
     localStorage.removeItem("playerName");
