@@ -20,12 +20,7 @@ function getPlayerName() {
 let carPic= document.getElementById("carPic");
 let obsPic= document.getElementById("obsPic");
 let rewardPic= document.getElementById("rewardPic");
-let  car =  {
-    x : 100,
-    y : 100,
-    speed : 2,
-    direction : ""
-    }
+
 let obtacles = generateObtacles(7);
 let rewards= generateRewards(5);
 let score =0 ;
